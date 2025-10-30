@@ -217,6 +217,7 @@ ul {
     }
   }
 }
+
 .philosophy-section {
   display: flex;
 
@@ -330,6 +331,7 @@ ul {
     }
   }
 }
+
 .skillset-item-description {
   font-family: var(--font-family);
   font-weight: var(--regular);
@@ -338,7 +340,40 @@ ul {
   padding-right: 48px;
 }
 
-/* media queries */
+.slider-section {
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  animation: slide 18s infinite;
+
+  .slide {
+    min-width: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 25%;
+    width: 100%;
+    padding-block: 55px;
+    border: 1px solid var(--level-1);
+  }
+}
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+  0% {
+    transform: translateX(0%);
+  }
+}
+
+/* media queries 1023 */
 @media (max-width: 1023px) {
   .header {
     padding-inline: var(--padding-inline);
@@ -353,16 +388,26 @@ ul {
   .hero-gray-square {
     display: none;
   }
+
   .skillset-section {
     grid-template-columns: 1fr;
-
+    gap: 40px;
     .skillset-common,
     .skillset-list {
       max-width: 100%;
     }
   }
+
+  .slides {
+    display: grid;
+    animation: none;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+  }
 }
 
+
+/* media queries 767px */
 @media (max-width: 767px) {
   .philosophy-section {
     flex-direction: column;
@@ -374,17 +419,17 @@ ul {
       height: 100%;
       aspect-ratio: 4/5;
       padding-block: var(--padding-vert-small);
-      /* padding-top: 42px; */
-      /* padding-bottom: 48px; */
     }
 
     .philosophy-text .philosophy-title {
       font-size: 32px;
     }
   }
+
   .skillset-list {
     grid-template-columns: 1fr;
   }
+
   .skillset-item-description {
     padding-right: 0;
   }
