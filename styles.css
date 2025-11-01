@@ -485,6 +485,64 @@ ul {
   }
 }
 
+.instagram-section {
+  display: flex;
+
+  .instagram-text {
+    background-color: var(--peach-accent);
+    padding: var(--padding-block) var(--padding-inline);
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    width: 100%;
+    height: 600px;
+
+    .instagram-title {
+      font-family: var(--font-family);
+      font-weight: var(--bold);
+      font-size: var(--h2);
+      color: var(--level-1);
+      padding-bottom: 24px;
+    }
+    .instagram-description {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      color: var(--dark-grey);
+    }
+    .instagram-about {
+      color: var(--level-1);
+      display: flex;
+      max-width: fit-content;
+      cursor: pointer;
+      position: relative;
+      margin-top: auto;
+      padding-bottom: 5px;
+    }
+    .instagram-about::before {
+      content: "";
+      position: absolute;
+      max-width: 100%;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 1px;
+      background-color: var(--light-grey);
+    }
+  }
+  .instagram-image {
+    background-image: url("images/plane.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 50%;
+    width: 100%;
+    aspect-ratio: 72/60;
+    width: 100%;
+  }
+}
+
 /* media queries 1023 */
 @media (max-width: 1023px) {
   .header {
