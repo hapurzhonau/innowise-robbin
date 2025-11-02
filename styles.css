@@ -596,7 +596,77 @@ ul {
     height: 1px;
     background-color: var(--light-grey);
   }
+
   .dribbble-image {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+
+.reviews-section {
+  padding: var(--padding-block) var(--padding-inline);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.reviews-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-right: 48px;
+
+  .reviews-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .reviews-text-title {
+      font-family: var(--font-family);
+      font-weight: var(--bold);
+      font-size: var(--h2);
+      color: var(--white);
+    }
+
+    .reviews-text-description {
+      font-family: var(--font-family);
+      font-weight: var(--regular);
+      font-size: var(--body1);
+      line-height: 150%;
+    }
+  }
+
+  .reviews-follow {
+    color: var(--white);
+    display: flex;
+    max-width: fit-content;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 5px;
+  }
+  .reviews-follow::before {
+    content: "";
+    position: absolute;
+    max-width: 100%;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: var(--light-grey);
+  }
+}
+
+.reviews-cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .reviews-card-image {
     max-width: 100%;
     width: 100%;
   }
