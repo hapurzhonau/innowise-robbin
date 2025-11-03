@@ -708,6 +708,66 @@ ul {
   }
 }
 
+.photo-section {
+  padding: var(--padding-block) var(--padding-inline);
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 588px;
+
+  .photo-text-title {
+    font-family: var(--font-family);
+    font-weight: var(--bold);
+    font-size: var(--h2);
+    color: var(--white);
+  }
+
+  .photo-text-description {
+    font-family: var(--font-family);
+    font-weight: var(--regular);
+    font-size: var(--body1);
+    line-height: 150%;
+  }
+}
+.photo-navbar-list {
+  display: flex;
+  gap: 24px;
+  margin: 64px 0 40px;
+
+  .photo-navbar-item {
+    padding: 12px 16px;
+    font-family: var(--font-family);
+    font-weight: var(--bold);
+    font-size: var(--body1);
+    line-height: 150%;
+    text-transform: uppercase;
+    color: var(--white);
+    border: 1px solid var(--purple);
+    max-width: fit-content;
+    transition: var(--transition-duration);
+  }
+  .photo-navbar-item:hover {
+    background-color: var(--purple);
+    cursor: pointer;
+    transition: var(--transition-duration);
+  }
+}
+.photo-gallery-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+
+  .photo-gallery-image {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
 /* media queries 1023 */
 @media (max-width: 1023px) {
   .header {
@@ -757,9 +817,12 @@ ul {
   .dribbble-wrapper {
     padding-inline: 0;
   }
- .reviews-card .reviews-card-text-container {
+  .reviews-card .reviews-card-text-container {
     padding: 32px;
     gap: 40px;
+  }
+  .photo-gallery-list {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -791,5 +854,19 @@ ul {
   }
   .reviews-section {
     grid-template-columns: 1fr;
+  }
+  .photo-gallery-list {
+    grid-template-columns: 1fr;
+  }
+  .photo-navbar-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+ .photo-navbar-list .photo-navbar-item {
+  display: flex;
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
   }
 }
